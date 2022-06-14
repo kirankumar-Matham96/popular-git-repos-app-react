@@ -1,0 +1,49 @@
+.repository-item-container {
+  width: 100%;
+  padding: 26px 42px;
+  border-radius: 10px;
+  background-color: #f8f8ff;
+  margin: 10px 0;
+  box-shadow: 0px 5px 5px #bfbfbf;
+}
+@media (min-width: 768px) {
+  .repository-item-container {
+    width: 30%;
+    padding: 26px 30px;
+    margin: 20px 0;
+  }
+}
+
+.repo-title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.repo-icon {
+  width: 95px;
+  margin-bottom: 16px;
+}
+
+.repo-name {
+  font-family: 'Roboto';
+  font-size: 24px;
+  color: #e73959;
+}
+
+.repo-data-container {
+  display: flex;
+  align-items: center;
+  margin: 16px 0;
+}
+
+.repo-data-icon {
+  width: 16px;
+  margin-right: 16px;
+}
+
+.repo-data-description {
+  font-family: 'Roboto';
+  color: #1e293b;
+  font-weight: 500;
+}
