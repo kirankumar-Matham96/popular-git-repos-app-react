@@ -23,17 +23,22 @@ class GithubPopularRepos extends Component {
   state = {
     apiStatus: apiStatusConstants.initial,
     repoItemsList: [],
-    filterOption: 'ALL',
+    filterOption: languageFiltersData[0].id,
   }
 
   componentDidMount = () => {
     this.getRepoItemsList()
   }
 
+  onChangeFilter = id => {
+    this.setState({filterOption: id}, this.getRepoItemsList)
+  }
+
   getRepoItemsList = async () => {
     this.setState({apiStatus: apiStatusConstants.inProgress})
 
-    const url = 'https://apis.ccbp.in/popular-repos'
+    const {filterOption} = this.state
+    const url = `https://apis.ccbp.in/popular-repos?language=${filterOption}`
     const response = await fetch(url)
     const data = await response.json()
 
@@ -87,6 +92,8 @@ class GithubPopularRepos extends Component {
           <LanguageFilterItem
             languageFilterData={eachFilterLanguage}
             filterOption={filterOption}
+            onChangeFilter={this.onChangeFilter}
+            key={eachFilterLanguage.id}
           />
         ))}
       </ul>

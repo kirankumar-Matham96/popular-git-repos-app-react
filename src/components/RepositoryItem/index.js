@@ -10,18 +10,17 @@ const RepositoryItem = props => {
     name: repoDetails.name,
     starsCount: repoDetails.stars_count,
   }
-  console.log(repoDetails)
+
   return (
     <li className="repository-item-container">
       <div className="repo-title-container">
         <img
           src={updatedRepoDetails.avatarUrl}
-          alt="avatar"
+          alt={updatedRepoDetails.name}
           className="repo-icon"
         />
         <h1 className="repo-name">{updatedRepoDetails.name}</h1>
       </div>
-      {/* <div className="repo-details-container"> */}
       <div className="repo-data-container">
         <img
           src="https://assets.ccbp.in/frontend/react-js/stars-count-img.png"
@@ -52,7 +51,6 @@ const RepositoryItem = props => {
           {updatedRepoDetails.issuesCount} open issues
         </p>
       </div>
-      {/* </div> */}
     </li>
   )
 }
